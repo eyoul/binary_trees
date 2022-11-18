@@ -1,10 +1,16 @@
 #include "binary_trees.h"
+
 /**
- * heap_extract - extract node
- * @root: root of the tre to evaluate
- * Return: value
+ * count_heap_nodes - Counts the number of nodes inside a tree
+ * @root: Pointer to tree's root node
+ *
+ * Return: Number of tree nodes
  */
-int heap_extract(heap_t **root)
+int count_heap_nodes(binary_tree_t *root)
 {
-	return (0);
+	if (!root)
+		return (0);
+
+	return (1 + count_heap_nodes(root->left) +
+		    count_heap_nodes(root->right));
 }
